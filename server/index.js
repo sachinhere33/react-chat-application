@@ -14,12 +14,17 @@ const socketio  = require("socket.io")(http,{
     cors:{origin:"http://localhost:5173"}
 })
 
-
+let users = []
 
 socketio.on("connection",(socket)=>{
     console.log(`socket id: ${socket.id} user just connected`)
 
-
+socket.on("newUser",(data)=>{
+    console.log("new user came ")
+    users.push(data)
+    socketio.emit("newUserResponse",users)
+    console.log(users)
+})
 
 socket.on("typing",(data)=> socket.broadcast.emit("typingResponse",data))
 
@@ -31,6 +36,10 @@ socket.on("message",(data)=>{
 })
 
     socket.on("disconnect",()=>{
+
+users = users.filter((user)=>user.socketID !== socket.id)
+socketio.emit("newUserResponse",users)
+socket.disconnect()
         console.log("user is disconencted now ")
     })
 })
