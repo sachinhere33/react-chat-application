@@ -1,14 +1,24 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-const Home = () => {
+const Home = ({socket}) => {
     const navigate = useNavigate()
     const [userName, setUsername] = useState("")
+
+
+
+
+
+
+
     const handleSubmit = (e) => {
         console.log("reached here ")
         //will handle when form is submitted 
         e.preventDefault();
 
         localStorage.setItem("userName", userName)
+
+socket.emit("newUser",{userName,socketId:socket.id})
+
         navigate("/chat")
 
     }
