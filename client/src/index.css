@@ -15,7 +15,7 @@
 } */
 *{
   box-sizing: border-box;
-  margin:0,0,0,0;
+  margin:0;
   padding:0;
   font-family: "poppins",sans-serif;
 }
@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
 }
-.home_container  > *{
+.home_container  > * {
   margin-bottom:10px ;
 }
 .form_header{
@@ -56,7 +56,9 @@ margin-bottom: 30px;
   align-items: center;
 }
 .bodyandfooter{
+
   height: 100%;
+  margin-top: 0px;
   
   flex:0.8;
 
@@ -64,7 +66,10 @@ margin-bottom: 30px;
 }
 .chat__sidebar{
   height: 100%;
-  background-color: #f9f5eb;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   flex:0.2;
   padding: 20px;
   border-right: 2px solid pink;
@@ -74,19 +79,22 @@ margin-bottom: 30px;
 .chat__header{
   margin: 30px 0 20px 0;
 }
-.chat__users{
+.chat__users > * {
   margin-bottom: 10px;
   color:blue;
   
 }
 .chat__mainHeader{
   width: 100%;
-  height: 100vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #f9fda9;
+  background: #7F7FD5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 
 }
 .leaveChat__btn{
@@ -112,7 +120,15 @@ overflow-y: scoll;
 .chat__footer{
   padding: 10px;
   height: 10vh;
- background-color: red;
+  background: hsla(212, 35%, 58%, 1);
+
+  background: linear-gradient(90deg, hsla(212, 35%, 58%, 1) 0%, hsla(218, 32%, 80%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(212, 35%, 58%, 1) 0%, hsla(218, 32%, 80%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(212, 35%, 58%, 1) 0%, hsla(218, 32%, 80%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#6D90B9", endColorstr="#BBC7DC", GradientType=1 );
 }
 .form{
   width: 100%;
@@ -122,12 +138,13 @@ overflow-y: scoll;
   justify-content: space-between;
 }
 .sendbutton{
-  width: 200px;
-  padding: 10px;
-  font-size:16px;
-  cursor: pointer;
-  background-color: aqua;
-  border-radius: 5px;
+  width: 90px;
+  height: 70px;
+  padding-right:30%;
+
+
+ 
+
 }
 .message{
   width: 80%;
@@ -143,6 +160,9 @@ overflow-y: scoll;
   padding: 10px;
   border-radius:10px ;
   font-size:15px;
+  /* border: 10px solid red; */
+  
+
 }
 .message__sender{
   background-color: bisque;
@@ -150,12 +170,14 @@ overflow-y: scoll;
   padding: 10px;
   border-radius:10px ;
   font-size:15px;
+  margin-left:70%;
+
 }
 .message__chats{
   font-size: 13px;
 }
 .sender__name{
-  text-align: right;
+  text-align: right!important;
 }
 .message__status{
   position: fixed;
