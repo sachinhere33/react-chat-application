@@ -4,7 +4,7 @@ import Home from '../components/Home'
 import ChatPage from '../components/chat'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import socketIO from "socket.io-client"
-const socket = socketIO.connect("http://localhost:4000")
+const socket = socketIO.connect("https://chat-application-40t4.onrender.com")
 
 function App() {
 
