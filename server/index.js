@@ -11,7 +11,7 @@ app.use(instance_of_cors)
 const http = require("http").Server(app)
 
 const socketio  = require("socket.io")(http,{
-    cors:{origin:"http://localhost:5173"}
+    cors:{origin:"https://chat-application-tawny-psi.vercel.app/"}
 })
 
 let users = []
